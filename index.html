@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JB Home Improvement LLC | Saint Charles, MO</title>
+  <meta name="description" content="Owner-operated home improvement in Saint Charles, Missouri. Kitchens, baths, flooring, painting, decks, and general remodeling. Free on-site estimates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1914;
+      --ink-soft: #4a4338;
+      --paper: #f6f1e8;
+      --paper-2: #efe6d6;
+      --cream: #fbf8f2;
+      --white: #fffcf7;
+      --cedar: #8b4b2a;
+      --cedar-dark: #6d391f;
+      --olive: #4d5a3a;
+      --gold: #c4a574;
+      --line: rgba(28, 25, 20, 0.12);
+      --shadow: 0 18px 50px rgba(28, 25, 20, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--cedar);
+    }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; line-height: 1.15; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--cedar);
+      color: #fff;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      font: 600 0.95rem/1 "DM Sans", sans-serif;
+      padding: 14px 22px;
+      border-radius: 999px;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { background: var(--cedar-dark); transform: translateY(-1px); }
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(251, 248, 242, 0.86);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 72px; gap: 16px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; font-weight: 700;
+    }
+    .mark {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--ink); color: var(--gold);
+      display: grid; place-items: center;
+      font-family: Fraunces, serif; font-weight: 700;
+    }
+    .nav-links { display: flex; gap: 22px; list-style: none; font-size: 0.92rem; }
+    .nav-links a { text-decoration: none; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--ink); }
+    .hero {
+      padding: 72px 0 40px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 4.3rem); margin: 14px 0 18px; }
+    .hero p.lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 34rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-card {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 460px;
+      background:
+        linear-gradient(180deg, rgba(28,25,20,0.05), rgba(28,25,20,0.45)),
+        url("https://images.unsplash.com/photo-1600585154340-0ef3c08c08be?auto=format&fit=crop&w=1400&q=80") center/cover;
+      box-shadow: var(--shadow);
+    }
+    .hero-badge {
+      position: absolute; left: 20px; bottom: 20px;
+      background: var(--white);
+      padding: 14px 16px; border-radius: 16px;
+      max-width: 240px;
+    }
+    .section { padding: 80px 0; }
+    .section.alt { background: var(--paper); }
+    .section-head { max-width: 640px; margin-bottom: 36px; }
+    .section-head h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-top: 8px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .card h3 { font-size: 1.2rem; margin: 8px 0 8px; }
+    .card p { color: var(--ink-soft); font-size: 0.96rem; }
+    .icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: var(--paper-2); display: grid; place-items: center;
+      font-size: 1.2rem;
+    }
+    .about {
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center;
+    }
+    .about-photo {
+      border-radius: 28px; min-height: 420px; overflow: hidden;
+      background: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+    .checks { margin-top: 18px; display: grid; gap: 10px; }
+    .checks li { list-style: none; padding-left: 28px; position: relative; color: var(--ink-soft); }
+    .checks li::before { content: "✓"; position: absolute; left: 0; color: var(--olive); font-weight: 700; }
+    .quote-box {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+      background: var(--ink); color: #f6f1e8;
+      border-radius: 28px; padding: 36px;
+    }
+    .quote-box h2 { color: #fff; }
+    .quote-box p { color: rgba(246,241,232,.78); margin: 12px 0 0; }
+    form { display: grid; gap: 12px; }
+    input, select, textarea {
+      width: 100%; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06); color: #fff;
+      border-radius: 12px; padding: 12px 14px; font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    form .btn { background: var(--gold); color: var(--ink); }
+    .fine { font-size: 0.78rem; color: rgba(246,241,232,.6); }
+    footer {
+      padding: 40px 0 28px; border-top: 1px solid var(--line);
+      color: var(--ink-soft); font-size: 0.92rem;
+    }
+    .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .toast {
+      display: none; margin-top: 10px; padding: 10px 12px; border-radius: 10px;
+      background: rgba(197,165,116,.2); color: #fff; font-size: 0.9rem;
+    }
+    @media (max-width: 860px) {
+      .hero, .about, .quote-box, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding-top: 36px; }
+      .hero-card { min-height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">
+        <span class="mark">JB</span>
+        <span>JB Home Improvement LLC</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#area">Service Area</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+      </ul>
+      <a class="btn" href="#quote">Free Estimate</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">Saint Charles, Missouri · Owner operated</div>
+        <h1>Honest work. Clean jobs. Homes that feel finished.</h1>
+        <p class="lead">Kitchens, baths, flooring, paint, decks, and everyday repairs for homeowners in St. Charles County and the surrounding St. Louis area. One point of contact from estimate to walkthrough.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#quote">Request a free estimate</a>
+          <a class="btn ghost" href="#services">See what we build</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-badge">
+          <strong>Local LLC</strong>
+          <p style="font-size:.9rem;color:var(--ink-soft);margin-top:4px;">Serving Saint Charles from Droste Road since 2021.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Home improvement that holds up in a Missouri house.</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="icon">⌂</div><h3>Kitchen &amp; bath</h3><p>Vanities, tile, showers, cabinets, and practical layout changes that make daily use easier.</p></article>
+          <article class="card"><div class="icon">▦</div><h3>Flooring</h3><p>LVP, hardwood, and tile installs with clean transitions and trim that matches the rest of the house.</p></article>
+          <article class="card"><div class="icon">✎</div><h3>Interior &amp; exterior paint</h3><p>Prep-first painting so walls, trim, and siding look sharp through St. Louis seasons.</p></article>
+          <article class="card"><div class="icon">▣</div><h3>Decks &amp; outdoor</h3><p>Deck repair, rebuilds, fences, and simple outdoor living upgrades.</p></article>
+          <article class="card"><div class="icon">⤓</div><h3>Basements</h3><p>Finishing, moisture-aware details, and extra living space without a circus of subcontractors.</p></article>
+          <article class="card"><div class="icon">⚒</div><h3>General repairs</h3><p>Doors, trim, drywall, siding patches, and the punch-list work most crews skip.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about">
+        <div class="about-photo" role="img" aria-label="Home renovation in progress"></div>
+        <div>
+          <div class="eyebrow">By owner</div>
+          <h2>A small Saint Charles crew, not a call center.</h2>
+          <p style="margin-top:14px;color:var(--ink-soft);">JB Home Improvement LLC is a Missouri limited liability company based at 3129 Droste Rd, Saint Charles. The idea is simple: the person who prices the job stays accountable for the work.</p>
+          <ul class="checks">
+            <li>Clear written estimates before work starts</li>
+            <li>Respect for occupied homes — daily cleanup, not weekend leftover mess</li>
+            <li>St. Charles County, St. Peters, O’Fallon, Wentzville, and nearby St. Louis County</li>
+            <li>Licensed / insured work arranged for the scope of each project</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="area">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Service area</div>
+          <h2>Built for the west side of the metro.</h2>
+          <p style="margin-top:10px;color:var(--ink-soft);">Primary service: Saint Charles, St. Peters, O’Fallon, Cottleville, Wentzville, Lake St. Louis, and select jobs in St. Louis County.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quote">
+      <div class="wrap">
+        <div class="quote-box">
+          <div>
+            <div class="eyebrow" style="color:var(--gold);">Free estimate</div>
+            <h2>Tell us what the house needs.</h2>
+            <p>This form opens an email draft on your device. Replace the address in the page with your real inbox before you publish.</p>
+            <p style="margin-top:18px;"><strong>JB Home Improvement LLC</strong><br>3129 Droste Rd<br>Saint Charles, MO 63301</p>
+          </div>
+          <form id="quote-form">
+            <input name="name" required placeholder="Your name" />
+            <input name="phone" required placeholder="Phone" />
+            <input name="email" type="email" placeholder="Email" />
+            <input name="city" placeholder="City / ZIP" />
+            <select name="job">
+              <option value="">Project type</option>
+              <option>Kitchen</option>
+              <option>Bathroom</option>
+              <option>Flooring</option>
+              <option>Paint</option>
+              <option>Deck / exterior</option>
+              <option>Basement</option>
+              <option>General repair</option>
+            </select>
+            <textarea name="details" placeholder="What needs to be done?"></textarea>
+            <button class="btn" type="submit">Send estimate request</button>
+            <div class="toast" id="toast">Draft email opened. Add your real contact email in the HTML before going live.</div>
+            <p class="fine">Hosted on GitHub Pages.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="y"></span> JB Home Improvement LLC · Saint Charles, Missouri</div>
+      <div>Owner-built site · Update phone and email before sharing publicly</div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const form = document.getElementById("quote-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const body = [
+        "Name: " + data.name,
+        "Phone: " + data.phone,
+        "Email: " + data.email,
+        "City: " + data.city,
+        "Project: " + data.job,
+        "",
+        data.details
+      ].join("\n");
+      const mailto = "mailto:hello@example.com?subject=" + encodeURIComponent("Estimate request — JB Home Improvement") + "&body=" + encodeURIComponent(body);
+      window.location.href = mailto;
+      document.getElementById("toast").style.display = "block";
+    });
+  </script>
+</body>
+</html>
