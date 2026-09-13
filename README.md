@@ -4,16 +4,25 @@ Owner-operated home improvement site for Saint Charles, Missouri.
 
 **Repository:** https://github.com/Joshlbritt/jb-home-improvement
 
-**Live site (after Pages is on):**  
+**HTTPS site (after Pages is enabled):**  
 https://joshlbritt.github.io/jb-home-improvement/
 
-## Enable GitHub Pages
+## Turn on GitHub Pages + HTTPS
+
+`github.io` sites already use HTTPS. You only need to publish the site:
 
 1. Open https://github.com/Joshlbritt/jb-home-improvement/settings/pages
-2. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-3. Branch: `main` / folder: `/ (root)`.
-4. Save. The site is usually live within a minute at the link above.
+2. **Build and deployment → Source**
+   - Option A (simplest): **Deploy from a branch** → `main` / `/ (root)` → Save
+   - Option B: **GitHub Actions** (uses `.github/workflows/pages.yml`)
+3. Wait 1–2 minutes, then open https://joshlbritt.github.io/jb-home-improvement/
+4. The padlock is automatic on `*.github.io`. No extra HTTPS toggle is required for that URL.
 
-## Edit contact info
+### Custom domain HTTPS (Cloudflare)
 
-In `index.html`, replace `hello@example.com` with the real estimate inbox before sharing the link.
+After DNS points at `Joshlbritt.github.io`:
+
+1. Same Pages settings page → **Custom domain** → enter `www.yourdomain.com` → Save
+2. Wait for the DNS check to turn green
+3. Check **Enforce HTTPS**
+4. In Cloudflare, keep records **DNS only** until that box works, then SSL/TLS mode **Full** or **Full (strict)**
